@@ -1,0 +1,25 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id="GS_0yO`-zF9}i8]3]Gvx" x="9" y="-253"><statement name="HANDLER"><block type="ESP8266_IoT_initWIFI" id="S?S$Pe#r0pyMjh,,yKjW"><field name="tx">SerialPin.P8</field><field name="rx">SerialPin.P12</field><field name="baudrate">BaudRate.BaudRate115200</field><next><block type="initMQTT" id="1CD=^VFx-qyyS}-)/JUE"><field name="scheme">ESP8266_IoT.SchemeList.TCP</field><value name="clientID"><shadow type="text" id="Pt4~FV3BNMuRw)^:kXg+"><field name="TEXT">fabrice</field></shadow></value><value name="username"><shadow type="text" id="ciQG;)*,IFC7_6;/~%Og"><field name="TEXT">fabrice</field></shadow></value><value name="password"><shadow type="text" id="|uaU[07/NZ8k)4e%n@_K"><field name="TEXT">aim7sparrow</field></shadow></value><value name="path"><shadow type="text" id="}+u=WA0cl15IE9|0Yr3t"><field name="TEXT"></field></shadow></value><next><block type="device_show_leds" id="Vvx[Fq+$.8IkZA5%rH%9"><field name="LEDS">`
+        # . . . # 
+        # # . # # 
+        . . # . . 
+        . # . # . 
+        # # . # #
+        `</field><next><block type="device_pause" id="QGJ1Gld3(tl:vAfQ0PJU"><value name="pause"><shadow type="timePicker" id="N,T7~j8*=kpL@{Fb-~1`"><field name="ms">5000</field></shadow></value></block></next></block></next></block></next></block></statement></block><block type="device_forever" id="-rZ0Hf|p^BiGB2ZTjaj!" x="683" y="72"><statement name="HANDLER"><block type="controls_if" id="JlTk3ME0qkj,Zo?3-_uF"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="ESP8266_IoT_wifiState" id="k[+mn+AwW=z}MzQy05e0"><value name="State"><shadow type="logic_boolean" id="=1L^dGEYG4`Rj6mbQm0h"><field name="BOOL">TRUE</field></shadow></value></block></value><statement name="DO0"><block type="device_show_leds" id="`ZYlfr!DCy{1OZ(wc/[p"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . # . . 
+        . . # . . 
+        . . # . .
+        `</field></block></statement><statement name="ELSE"><block type="ESP8266_IoT_connectWifi" id="Z-`vZi*+xw@N=m@o@N:n"><value name="ssid"><shadow type="text" id="p4DN]e1i;PR=PDoqql$O"><field name="TEXT">imotep</field></shadow></value><value name="pw"><shadow type="text" id="/sQJ]=N6x7FDF%P.M!h~"><field name="TEXT">Deltaforce322851!</field></shadow></value><next><block type="device_pause" id="moS[i*PRM;]a2bus$MdU"><value name="pause"><shadow type="timePicker" id="I,k/DsdUt(xb_^Nt^SaC"><field name="ms">5000</field></shadow></value></block></next></block></statement><next><block type="controls_if" id="%+TF{0F^Z9SI}Yu6:tXK"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="ESP8266_IoT_isMqttBrokerConnected" id="WQpDMSV=eIlHuTDm8N?$"></block></value><statement name="DO0"><block type="device_show_leds" id="#__uoOf?^y-CVtu/_sSm"><field name="LEDS">`
+        # . . . # 
+        . # . # . 
+        . . # . . 
+        . . # . . 
+        . . # . .
+        `</field></block></statement><statement name="ELSE"><block type="connectMQTT" id="Q(hgHwIo;`3N~)G4GfOi"><value name="host"><shadow type="text" id="G?OU*]CW]c+Ezb{w)n}T"><field name="TEXT">192.168.0.230</field></shadow></value><value name="port"><shadow type="math_number" id="L{8?^IO|PD$!s:5p@R#?"><field name="NUM">1883</field></shadow></value><value name="reconnect"><shadow type="logic_boolean" id="[~h/PSR@},qT4CmQKcP]"><field name="BOOL">FALSE</field></shadow></value></block></statement></block></next></block></statement></block><block type="ESP8266_IoT_wifiState" id="cc$jT{fW^AdQAc]C8-47" disabled="true" x="294" y="256"><value name="State"><shadow type="logic_boolean" id="3@%HUo,?%FbA-u/mh6SN" disabled="true"><field name="BOOL">FALSE</field></shadow></value></block><block type="ESP8266_IoT_isMqttBrokerConnected" id="?)i|aXM;^CXAPyM[_v~D" disabled="true" x="308" y="310"></block><block type="device_button_event" id="/8BFpwRIL1c5(j|ElHiD" x="20" y="433"><field name="NAME">Button.A</field><statement name="HANDLER"><block type="sendMQTT" id="bQy}0PePr$xl*PS]tZa;"><field name="qos">ESP8266_IoT.QosList.Qos0</field><value name="msg"><shadow type="text" id="*f(mg5M8:G54[U.DRGtF"><field name="TEXT">moi microbit</field></shadow></value><value name="topic"><shadow type="text" id="(pY,N=w16e~dm5^E^gsP"><field name="TEXT">topic1</field></shadow></value><next><block type="device_show_leds" id="j:T_~xeV~ZV|lj]C{(TP"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . # . . 
+        . . . . . 
+        . . . . .
+        `</field></block></next></block></statement></block></xml>
