@@ -1,12 +1,11 @@
 input.onButtonPressed(Button.A, function () {
-    ESP8266_IoT.publishMqttMessage("moi microbit", "topic1", ESP8266_IoT.QosList.Qos0)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . # . .
-        . . . . .
-        . . . . .
-        `)
+    ESP8266_IoT.publishMqttMessage("open", "topic1", ESP8266_IoT.QosList.Qos0)
+})
+input.onButtonPressed(Button.AB, function () {
+    ESP8266_IoT.publishMqttMessage("bonjour", "topic1", ESP8266_IoT.QosList.Qos0)
+})
+input.onButtonPressed(Button.B, function () {
+    ESP8266_IoT.publishMqttMessage("close", "topic1", ESP8266_IoT.QosList.Qos0)
 })
 ESP8266_IoT.initWIFI(SerialPin.P8, SerialPin.P12, BaudRate.BaudRate115200)
 ESP8266_IoT.setMQTT(
